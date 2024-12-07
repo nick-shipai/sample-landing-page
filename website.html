@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="website.css">
+    <title>Cool landing Page </title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Super Site</div>
+        <nav>
+            <ul class="nav-link">
+            <li><a href="#service">Service</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="cta-btn" id="getStartedBtn">Get Started</button>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>We Create Stunning Websites</h1>
+            <p>Transform your vision into reality with Super Site. Modern, responsive, and tailored to your needs.</p>
+            <a href="#contact" class="btn-primary">Lets Build</a>
+        </div>
+    </section>
+    <section id="services" class="services">
+        <h2>Our Service</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>Custom Design</h3>
+                <p>unique design tailored to your brand identity</p>
+            </div>
+            <div class="card">
+                <h3>Responsive Layout</h3>
+                <p>Seamless experience on all device, big or small.</p>
+            </div>
+            <div class="card">
+                <h3>E-commerce Solution</h3>
+                <p>Powerful online stores to grow your business</p>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At Super Site, we combine creativity and technology to deliver
+            exceptional websites that help businesses thrive in the digital 
+            world.
+        </p>
+    </section>
+    <footer id="contact" class="footer">
+        <h2>Contact Us</h2>
+        <p>Email: <a
+        href="mercydav3000@gmail.com">info@supersites.com</a></p>
+        <p>phone: +234 7032253617</p>
+        <p>© 2024 Super Site. All rights reserved</p>
+    </footer>
+    <!--Modal-->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Get Started</h2>
+            <div class="form-container">
+                <button class="tab-btn active" id="signupTab">Sign Up</button>
+                <button class="tab-btn" id="loginTap">Login</button>
+                <form id="signupForm" class="form active-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="password" required>
+                    <button type="submit" class="form-btn">Sign Up</button>
+                </form>
+                <form id="loginForm" class="form">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button type="submit" class="form-btn">Login</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById('modal');
+        const getStartedBtn = document.getElementById('getStartedBtn');
+        const closeModal = document.getElementById('closeModal');
+        const signupTab = document.getElementById('signupTab');
+        const loginTab = document.getElementById('loginTab');
+        const signupForm = document.getElementById('signupForm');
+        const loginForm = document.getElementById('loginForm');
+
+        getStartedBtn.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        signupTab.addEventListener('click', () => {
+            signupTap.classList.add('active');
+            loginTab.classList.remove('active');
+            signupForm.classList.add('active-form');
+            loginForm.classList.remove('active-form');
+        });
+
+        loginTab.addEventListener('click', () => {
+            loginTap.classList.add('active');
+            signupTab.classList.remove('active');
+            loginForm.classList.add('active-form');
+            signupForm.classList.remove('active-form');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display ='none';
+            }
+        });
+        
+    </script>
+</body>
+</html>
